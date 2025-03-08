@@ -11,6 +11,20 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from miami device
 $(call inherit-product, device/motorola/miami/device.mk)
 
+## risingOS-Flags
+
+# Addons
+TARGET_HAS_UDFPS := true
+
+# Lawnchair Prebuilt
+TARGET_PREBUILT_LAWNCHAIR_LAUNCHER := true
+
+# disable/enable blur support, default is false
+TARGET_ENABLE_BLUR := true
+
+# rising Maintainer
+RISING_MAINTAINER := Rakhshan
+
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
@@ -25,4 +39,6 @@ PRODUCT_GMS_CLIENTID_BASE := android-motorola
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="miami_g-user 14 U1SSM34M.31-64-10 650ab0 release-keys" \
     BuildFingerprint=motorola/miami_g/miami:14/U1SSM34M.31-64-10/650ab0:user/release-keys \
-    DeviceProduct=miami_g
+    DeviceProduct=miami_g \
+    RisingMaintainer="Rakhshan" \
+    RisingChipset="Snapdragon 695"
